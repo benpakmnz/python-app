@@ -34,15 +34,13 @@ jobs:
     needs: ci
     runs-on: self-hosted
     steps:
-      - 
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
       - 
         name: Modify values file
         shell: bash
         run: |
           echo ${{ needs.ci.outputs.commit_id }}
-          wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
-          chmod +x /usr/local/bin/yq
+          pip install yq
           yq -Yi '.image.tag = "${{ needs.ci.outputs.commit_id }}"' charts/python-app/values.yaml
       - 
         name: Commit changes
