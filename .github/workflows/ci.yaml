@@ -41,7 +41,7 @@ jobs:
         shell: bash
         run: |
           echo ${{ needs.ci.outputs.commit_id }}
-          pipe install yq
+          pip install yq
           yq -Yi '.image.tag = "${{ needs.ci.outputs.commit_id }}"' charts/python-app/values.yaml
       - 
         name: Commit changes
