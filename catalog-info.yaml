@@ -10,3 +10,7 @@ spec:
   type: service
   owner: development
   lifecycle: experimental
+  links:
+    - url: https://github.com/benpakmnz/python-app
+      title: GitHub Repository
+      icon: github
