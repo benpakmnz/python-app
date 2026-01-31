@@ -5,6 +5,7 @@ metadata:
   description: Python app that displays time.
   annotations:
     github.com/project-slug: benpakmnz/python-app
+    github.com/techdocs-ref: dir:.  # location of the docs
 spec:
   type: service
   owner: development
